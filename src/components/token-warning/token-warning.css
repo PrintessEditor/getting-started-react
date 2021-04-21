@@ -1,0 +1,16 @@
+.token-warning {
+    display: block; 
+    border: 3px solid red;
+    position: absolute;
+    left: calc(50% - 190px);
+    bottom: -3px;
+    width: 380px;
+
+    background-color: yellow;
+    z-index: 9999999;
+    font-family: sans-serif;
+    padding: 5px;
+}
+.token-warning > h4 {
+    margin: 0 0 2px 0;
+}
