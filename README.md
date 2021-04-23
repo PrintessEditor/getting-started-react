@@ -6,7 +6,7 @@ This repo shows how to get started with the printess editor in React.
 
 To see how to get started with React itself, [click here](#how-to-get-started-with-create-react-app).
 
-To get started with Printess in Vanilla JavaScript, go here <https://github.com/PrintessEditor/getting-started>.
+To get started with the printess editor in Vanilla JavaScript, go here <https://github.com/PrintessEditor/getting-started>.
 
 ## &nbsp;
 
