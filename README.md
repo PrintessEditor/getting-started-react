@@ -130,54 +130,7 @@ We are working on a method to assign an existing `basketId` to a `shopUserId` in
 
 ## &nbsp;
 
-## Store and Recall the Design Work
-
-To store the result of what your customer has configured in Printess you can simply call `printess.saveJson()`. In return you will get a token that yu can easily use to load this state if the customer returns or want to make changes. You also can use this token to load the customers design from the admin-view to apply fixes you might have received via email or phone.
-
-**Save customers work**
-
-```js
-const myToken = await printess.saveJson();
-```
-
-**Load customers work**
-
-```js
-await printess.loadJson(myToken);
-```
-
-To test it, we added a button in the toolbar **Save State**, which saves the current state and returns a token to load it later. Just try it, make some other changes or even load a different template, and then press **Load Stated**, paste the token to the prompt and you will see the state you prevoiusly stored.
-
-## &nbsp;
-
-## Creating a Thumbnail Image
-
-After the buyer has put the design to the shopping basket you might want to retrieve a small image of the current layout. Do get a URL of such a "Thumbnail" you can call:
-
-```js
-const fileName = 'thumb_' + new Date().getTime() + '.png';
-const documentName = '';
-const width = 400; // max is 400
-const height = 400; // max is 400
-
-printess
-  .renderFirstPageImage(fileName, documentName, width, height)
-  .then((thumbnailUrl) => {
-    window.open(thumbnailUrl);
-  });
-```
-
-**fileName**: has to be set, so you can put the basket ID here to override an existing image.
-
-**documentName**: can be set if you for example want a thumbnail of a specific preview document. Otherwise the primary document will be taken. If you want to get a thumbnail of any existing preview document just pass **"!PREVIEW!"**. If no "preview"-document is found it falls back to the "primary" document and then to the first document of the template. You can see this in action on the "T-Shirt" example.
-
-**width**: the maximum width of the thumbnail based on aspect ratio of the document the resulting thumbnail-width can smaller.
-
-**height**: the maximum height of the thumbnail based on aspect ratio of the document the resulting thumbnail-height can smaller.
-
-_TIP:_ Press the _Create Thumbnail_ Button to show a thumbnail of the current Template.
-
-> :warning: The thumbnail generation might take a couple of seconds. If you request the thumbnail when the buyer clicks **continue** - you need to show an overlay screen and wait for the call to finish before you unload the Printess editor!
+### Please find more documentation in the [Printess Knowledge Base](https://printess.com/kb/api-reference/js-api/getting-started.html) 
 
 ## &nbsp;
 
