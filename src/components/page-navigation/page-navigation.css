@@ -1,0 +1,32 @@
+#desktop-pagebar {
+  width:  100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-top: 30px;
+}
+#desktop-pagebar .undo-redo-bar {
+  display: flex;
+  align-self: flex-start;
+  padding-top: 3px;
+}
+#desktop-pagebar .icon {
+  width:20px;
+  height:20px;
+  color: inherit;
+}
+
+.undo-button, .redo-button {
+  outline: none !important;
+  border: none !important;
+}
+
+.undo-button:hover, .redo-button:hover {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 896px) {
+  #desktop-pagebar {
+    display: none !important;
+  }
+}

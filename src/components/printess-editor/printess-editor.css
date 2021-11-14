@@ -1,8 +1,91 @@
-#printess {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    width: calc(100vw - 40px);
-    height: calc(100vh - 100px);
-    border: 1px solid red;
+#printess-desktop-grid {
+  position: absolute; 
+  height: initial;
+  top: 60px;
+  bottom: 0px;  
+  width: calc(100vw - 30px);
+  margin-left: 30px;   
+  display: grid;
+  grid-template-rows: 80px 1fr 30px;
+  grid-template-columns: 1fr 450px;
+  column-gap: 25px;
+}
+
+#desktop-pagebar {
+  width:  100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-top: 30px;
+}
+#desktop-pagebar .undo-redo-bar {
+  display: flex;
+  align-self: flex-start;
+  padding-top: 3px;
+}
+#desktop-pagebar .icon {
+  width:20px;
+  height:20px;
+  color: inherit;
+}
+
+#desktop-properties {
+  grid-row: 1 / 4;
+  grid-column: 2;
+  display: flex;
+  height: -webkit-fill-available; /* safari only */
+  flex-direction: column;
+  padding-right: 5px;
+  padding-top: 30px;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+#desktop-properties > * {
+  margin-bottom: 10px;
+}
+
+#desktop-properties .dropdown-toggle.full-width::after {
+  /* tweaking the bootstrap class for 100% width controls */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+#desktop-properties .color-drop-down-list .btn-color-select:after {
+  position: absolute;
+  top: 45%;
+  right: 12px;
+  color: white;
+}
+
+#desktop-properties .color-drop-down-list .btn-color-select {
+  border-radius: 50%;
+  min-width: 39px;
+  min-height: 39px;
+  padding: 2px;
+  border: 1px solid lightgray;
+}
+
+#desktop-printess-container {
+  outline: 1px solid gray;
+}
+
+@media screen and (max-width: 896px) {
+  #printess-desktop-grid {
+    /* shrink the desktop-grid, mobile items are positioned absolute */
+    margin: 0;
+    grid-template-rows: 0 0;
+    grid-template-columns: 0 0;
+    column-gap: 0;
+    height: 100px !important; /* to ensure its not bigger than the viewport */
+  }
+
+  #desktop-pagebar {
+    display: none !important;
+  }
+
+  #desktop-properties, #json,  .token-warning, #desktop-pagebar {
+    display: none !important;
+  }
 }
